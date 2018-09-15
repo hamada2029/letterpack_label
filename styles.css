@@ -174,7 +174,6 @@ h1{
     right: 0;
     margin: auto;
     background: #ff5555;
-    text-align: center;
     color: #FFFFFF;
     font-size: 3vw;
     font-weight: bold;
@@ -187,4 +186,44 @@ h1{
     background: #ff2222;
 }
 
+#save_button{
+    position: absolute;
+    top: 81%;
+    width: 15%;
+    height: 3%;
+    left: 20%;
+    background: #ff5555;
+    color: #FFFFFF;
+    font-size: 2vw;
+    font-weight: bold;
+    border-radius: 1vw;
+    box-shadow: 0.5vw 0.5vw 0.5vw #555555;
+}
 
+#save_button:active{
+    color: #555555;
+    background: #ff2222;
+}
+
+#load_button{
+    position: absolute;
+    top: 81%;
+    width: 15%;
+    height: 3%;
+    right: 20%;
+    background: #ff5555;
+    color: #FFFFFF;
+    font-size: 2vw;
+    font-weight: bold;
+    border-radius: 1vw;
+    box-shadow: 0.5vw 0.5vw 0.5vw #555555;
+}
+
+#load_button:active{
+    color: #555555;
+    background: #ff2222;
+}
+
+#load_file{
+    display: none;
+}
