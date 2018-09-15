@@ -10,6 +10,8 @@
     <script type="text/javascript" src='./scripts/vfs_fonts.js'></script>
     <script type="text/javascript" src="./scripts/plus.js"></script>
     <script type="text/javascript" src="./scripts/pdf_script.js"></script>
+    <script type="text/javascript" src="./scripts/file_dl.js"></script>
+    <script type="text/javascript" src="./scripts/file_load.js"></script>
 
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
@@ -48,19 +50,23 @@
         <input type="text" name="from_tel3" id="from_tel3" placeholder="TEL3" title="半角数字4桁">
         <textarea name="desc" id="desc" placeholder="品名 (19文字 x 2行)" rows=2></textarea>
 
-        <button id="save_button">Save</button>
-        <button id="make_button">make PDF</button>
-        <button id="load_button">Load</button>
-        <input type="file" name="load_file" id="load_file">
+        <button id="save_button" title="入力内容をファイルに保存">
+            Save
+        </button>
+        <button id="make_button">Make PDF</button>
+        <button id="load_button" title="jsonファイルから読み込み">
+            Load
+        </button>
+        <input type="file" name="load_file" id="load_file" accept=".json">
     </div>
-
-    <script type="text/javascript" src="./scripts/file_dl.js"></script>
 
     <script type="text/javascript">
         $('#save_button').on('click', fileDL);
         $('#load_button').on('click', function(){
             $('#load_file').click();
         });
+        $('#load_file').on('change', loadData);
+
 
         $('#to_zip').on(
             'keyup',
