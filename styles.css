@@ -1,0 +1,190 @@
+input, textarea{
+    background-color: whitesmoke;
+    resize: none;
+}
+
+#base_div{
+    position: absolute;
+}
+
+#base_img{
+    /*position: absolute;*/
+    width: 100%;
+    border: medium solid whitesmoke;
+}
+
+#head1{
+    position: absolute;
+    top: 0%;
+    height: 8%;
+    width: 100%;
+    background-color: #ff5555;
+    border: medium solid #ff5555;
+}
+
+h1{
+    position: absolute;
+    top: 1%;
+    left: 0;
+    right: 0;
+    color: white;
+    text-align: center;
+    margin: auto;
+    font-size: 2vw;
+}
+#overview{
+    position: absolute;
+    top: 3.5%;
+    left: 0;
+    right: 0;
+    color: white;
+    text-align: center;
+    margin: auto;
+    font-size: 1.2vw;
+}
+.h_button{
+    position: absolute;
+    top: 6%;
+    width: 8%;
+    height: 1.7%;
+    margin: auto;
+    background: #ee0000;
+    text-align:center;
+    color: #FFFFFF;
+    font-size: 1.2vw;
+    font-weight: bold;
+    border-radius: 0.5vw;
+    border: 0;
+}
+.h_button:active{
+    color: #555555;
+    background: #ff5555;
+}
+
+#clear_button{
+    left: 78%;
+}
+#reverse_button{
+    left: 87%;
+}
+
+
+#to_zip{
+    position: absolute;
+    left: 49%;
+    top: 14.9%;
+    width: 38%;
+    font-size: 4vw;
+
+}
+#to_add{
+    position: absolute;
+    left: 40%;
+    top: 27%;
+    width: 45%;
+    font-size: 2vw;
+}
+#to_name{
+    position: absolute;
+    left: 40%;
+    top: 39%;
+    width: 40%;
+    font-size: 2vw;
+}
+#to_tel1{
+    position: absolute;
+    left: 45%;
+    top: 45.2%;
+    width: 10%;
+    font-size: 2vw;
+}
+#to_tel2{
+    position: absolute;
+    left: 58.5%;
+    top: 45.2%;
+    width: 10%;
+    font-size: 2vw;
+}
+#to_tel3{
+    position: absolute;
+    left: 72%;
+    top: 45.2%;
+    width: 10%;
+    font-size: 2vw;
+}
+
+
+#from_zip{
+    position: absolute;
+    left: 37.5%;
+    top: 49.3%;
+    width: 16.8%;
+    font-size: 1.5vw;
+}
+#from_add{
+    position: absolute;
+    left: 40%;
+    top: 54%;
+    width: 45%;
+    font-size: 1.3vw;
+}
+#from_name{
+    position: absolute;
+    left: 40%;
+    top: 58.7%;
+    width: 40%;
+    font-size: 1.5vw;
+}
+#from_tel1{
+    position: absolute;
+    left: 45%;
+    top: 63.3%;
+    width: 10%;
+    font-size: 2vw;
+}
+#from_tel2{
+    position: absolute;
+    left: 58.5%;
+    top: 63.3%;
+    width: 10%;
+    font-size: 2vw;
+}
+#from_tel3{
+    position: absolute;
+    left: 72%;
+    top: 63.3%;
+    width: 10%;
+    font-size: 2vw;
+}
+#desc{
+    position: absolute;
+    left: 40%;
+    top: 71%;
+    width: 45%;
+    font-size: 1.3vw;
+}
+
+
+#make_button{
+    position: absolute;
+    top: 80%;
+    width: 25%;
+    height: 5%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: #ff5555;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 3vw;
+    font-weight: bold;
+    border-radius: 1.5vw;
+    box-shadow: 0.5vw 0.5vw 0.5vw #555555;
+}
+
+#make_button:active{
+    color: #555555;
+    background: #ff2222;
+}
+
+

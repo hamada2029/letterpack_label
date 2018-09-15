@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>続・レターパックラベルメイカー</title>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="./scripts/pdfmake.min.js"></script>
+    <script type="text/javascript" src="./scripts/form_script.js"></script>
+    <script type="text/javascript" src='./scripts/vfs_fonts.js'></script>
+    <script type="text/javascript" src="./scripts/plus.js"></script>
+    <script type="text/javascript" src="./scripts/pdf_script.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+
+    <div id="base_div">
+        <div id="head1"></div>
+
+        <img id="base_img" src="./imgs/plus_base.png">
+
+        <h1>続・<a href="http://www.post.japanpost.jp/service/letterpack/" target="_blank">レターパックプラス</a>ラベルメイカー</h1>
+        <div id="overview">
+            フォーム入力だけで作成出来ます。<br>
+            文字数オーバーすると赤くなります。(そのままでもPDF出力は可能です。)<br>
+            ライトはこちらです。
+        </div>
+        <button id="clear_button" class="h_button" title="全削除">
+            Clear
+        </button>
+        <button id="reverse_button" class="h_button" title="ToとFromを入れ替え">
+            Reverse
+        </button>
+        
+        <input type="text" name="to_zip" id="to_zip" placeholder="郵便番号" title="半角数字7桁" autofocus>
+        <textarea name="to_add" id="to_add" placeholder="住所 (14文字 x 4行)" rows=4 title="郵便番号から自動入力"></textarea>
+        <textarea name="to_name" id="to_name" placeholder="名前 (13文字 x 2行)" rows=2></textarea>
+        <input type="text" name="to_tel1" id="to_tel1" placeholder="TEL1" title="半角数字4桁">
+        <input type="text" name="to_tel2" id="to_tel2" placeholder="TEL2" title="半角数字4桁">
+        <input type="text" name="to_tel3" id="to_tel3" placeholder="TEL3" title="半角数字4桁">
+
+        <input type="text" name="from_zip" id="from_zip" placeholder="郵便番号" title="半角数字7桁">
+        <textarea name="from_add" id="from_add" placeholder="住所 (20文字 x 2行)" rows=2 title="郵便番号から自動入力"></textarea>
+        <textarea name="from_name" id="from_name" placeholder="名前 (20文字 x 2行)" rows=2></textarea>
+        <input type="text" name="from_tel1" id="from_tel1" placeholder="TEL1" title="半角数字4桁">
+        <input type="text" name="from_tel2" id="from_tel2" placeholder="TEL2" title="半角数字4桁">
+        <input type="text" name="from_tel3" id="from_tel3" placeholder="TEL3" title="半角数字4桁">
+        <textarea name="desc" id="desc" placeholder="品名 (19文字 x 2行)" rows=2></textarea>
+
+        <button id="make_button">make PDF</button>
+    </div>
+
+    <script type="text/javascript">
+        $('#to_zip').on(
+            'keyup',
+            function(){
+                AjaxZip3.zip2addr(this, '', 'to_add', 'to_add');
+            }
+        );
+        $('#from_zip').on(
+            'keyup',
+            function(){
+                AjaxZip3.zip2addr(this, '', 'from_add', 'from_add');
+            }
+        );
+
+        $('#make_button').on(
+            'click', 
+            function(){
+                var docDefinition = defineDoc();
+                pdfMake.createPdf(docDefinition).open();
+                return false;
+            }
+        );
+
+        $('body').on('load', checkLen);
+        $('input[type="text"]').on('keyup', checkLen);
+
+        $('body').on('load', checkAreaLen);
+        $('textarea').on('keyup', checkAreaLen);
+
+        $('#clear_button').on('click', clearAll);
+        $('#reverse_button').on('click', reverse);
+    </script>
+</body>
+
+</html>
+
+
