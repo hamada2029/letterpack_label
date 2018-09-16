@@ -1,7 +1,7 @@
 Letterpack Label Maker
 ====
 
-Letterpack label maker on client side Javascript.
+Letterpack label maker on client side JavaScript.
 
 ## Description
 
