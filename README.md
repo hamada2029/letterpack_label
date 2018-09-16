@@ -1,3 +1,10 @@
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script language="JavaScript">
+$(document).ready( function () {
+   $("a[href^='http']:not([href*='" + location.hostname + "'])").attr('target', '_blank');
+});
+</script>
+
 Letterpack Label Maker
 ====
 
@@ -15,7 +22,9 @@ Tested on Safari 11 and Google Chrome.
 
 ## Usage
 
-Open <https://hamada2029.github.io/letterpack_label/form_plus.html> on your browser and input form.
+Open  
+<https://hamada2029.github.io/letterpack_label/form_plus.html>  
+on your browser and input form.
 
 ## Credits
 
