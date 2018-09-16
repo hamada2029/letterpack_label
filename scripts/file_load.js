@@ -16,5 +16,6 @@ function setData(ev) {
         if(e.length == 0){continue;}
         e.val(j[k]);
     }
+    $('#load_file').val(null);
 }
 

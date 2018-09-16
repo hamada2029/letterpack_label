@@ -97,6 +97,22 @@ function clearAll() {
     );
 }
 
+function clearTo() {
+    if(! confirm('お届け先を削除します。')){
+        return;
+    }
+    $('input[id^="to_"]').each(
+        function (i, e) {
+            e.value = '';
+        }
+    );
+     $('textarea[id^="to_"]').each(
+        function (i, e) {
+            e.value = '';
+        }
+    );
+}
+
 function reverse() {
     var ar = ['zip', 'add', 'name', 'tel1', 'tel2', 'tel3'];
     for (var i = 0; i < ar.length; i++) {

@@ -28,33 +28,36 @@
             文字数オーバーすると赤くなります。(そのままでもPDF出力は可能です。)<br>
             ライトはこちらです。
         </div>
-        <button id="clear_button" class="h_button" title="全削除">
-            Clear
-        </button>
         <button id="reverse_button" class="h_button" title="ToとFromを入れ替え">
             Reverse
+        </button>
+        <button id="clear_to_button" class="h_button" title="お届け先削除">
+            Clear To
+        </button>
+        <button id="clear_all_button" class="h_button" title="全削除">
+            Clear All
         </button>
         
         <input type="text" name="to_zip" id="to_zip" placeholder="郵便番号" title="半角数字7桁" autofocus>
         <textarea name="to_add" id="to_add" placeholder="住所 (14文字 x 4行)" rows=4 title="郵便番号から自動入力"></textarea>
         <textarea name="to_name" id="to_name" placeholder="名前 (13文字 x 2行)" rows=2></textarea>
-        <input type="text" name="to_tel1" id="to_tel1" placeholder="TEL1" title="半角数字4桁">
-        <input type="text" name="to_tel2" id="to_tel2" placeholder="TEL2" title="半角数字4桁">
-        <input type="text" name="to_tel3" id="to_tel3" placeholder="TEL3" title="半角数字4桁">
+        <input type="text" name="to_tel1" id="to_tel1" placeholder="TEL1" title="半角数字4桁" class="tel">
+        <input type="text" name="to_tel2" id="to_tel2" placeholder="TEL2" title="半角数字4桁" class="tel">
+        <input type="text" name="to_tel3" id="to_tel3" placeholder="TEL3" title="半角数字4桁" class="tel">
 
         <input type="text" name="from_zip" id="from_zip" placeholder="郵便番号" title="半角数字7桁">
         <textarea name="from_add" id="from_add" placeholder="住所 (20文字 x 2行)" rows=2 title="郵便番号から自動入力"></textarea>
         <textarea name="from_name" id="from_name" placeholder="名前 (20文字 x 2行)" rows=2></textarea>
-        <input type="text" name="from_tel1" id="from_tel1" placeholder="TEL1" title="半角数字4桁">
-        <input type="text" name="from_tel2" id="from_tel2" placeholder="TEL2" title="半角数字4桁">
-        <input type="text" name="from_tel3" id="from_tel3" placeholder="TEL3" title="半角数字4桁">
+        <input type="text" name="from_tel1" id="from_tel1" placeholder="TEL1" title="半角数字4桁" class="tel">
+        <input type="text" name="from_tel2" id="from_tel2" placeholder="TEL2" title="半角数字4桁" class="tel">
+        <input type="text" name="from_tel3" id="from_tel3" placeholder="TEL3" title="半角数字4桁" class="tel">
         <textarea name="desc" id="desc" placeholder="品名 (19文字 x 2行)" rows=2></textarea>
 
-        <button id="save_button" title="入力内容をファイルに保存">
+        <button id="save_button" title="入力内容をファイルに保存" class="f_button">
             Save
         </button>
-        <button id="make_button">Make PDF</button>
-        <button id="load_button" title="jsonファイルから読み込み">
+        <button id="make_button" class="f_button">Make PDF</button>
+        <button id="load_button" title="jsonファイルから読み込み" class="f_button">
             Load
         </button>
         <input type="file" name="load_file" id="load_file" accept=".json">
@@ -96,8 +99,9 @@
         $('body').on('load', checkAreaLen);
         $('textarea').on('keyup', checkAreaLen);
 
-        $('#clear_button').on('click', clearAll);
         $('#reverse_button').on('click', reverse);
+        $('#clear_all_button').on('click', clearAll);
+        $('#clear_to_button').on('click', clearTo);
     </script>
 </body>
 
