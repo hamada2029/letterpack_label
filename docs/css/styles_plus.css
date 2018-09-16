@@ -11,7 +11,7 @@
 #head1{
     position: absolute;
     top: 0%;
-    height: 8%;
+    height: 9%;
     width: 100%;
     background-color: #ff5555;
     border: medium solid #ff5555;
@@ -39,6 +39,7 @@ h1{
 }
 .h_button{
     position: absolute;
+    top: 7%;
     width: 8%;
     height: 1.7%;
     margin: auto;
@@ -57,17 +58,14 @@ h1{
 
 
 #clear_to_button{
-    top: 6%;
     right: 16%;
     width: 8%;
 }
 #clear_all_button{
-    top: 6%;
     right: 7%;
     width: 8%;
 }
 #reverse_button{
-    top: 6%;
     left: 7%;
     width: 17%;
 }
