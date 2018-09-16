@@ -5,8 +5,13 @@ Letterpack label maker on client side Javascript.
 
 ## Description
 
-Making address label PDF for 
-[Letterpack](https://www.post.japanpost.jp/service/letterpack/).
+Make address label PDF for 
+[Letterpack](https://www.post.japanpost.jp/service/letterpack/).  
+Only using web browser.
+
+## Requirement
+
+Tested on Safari 11 and Google Chrome.
 
 ## Usage
 
