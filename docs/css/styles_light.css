@@ -1,0 +1,196 @@
+
+#base_div{
+    position: absolute;
+}
+
+#base_img{
+    width: 100%;
+    border: medium solid whitesmoke;
+}
+
+#head1{
+    position: absolute;
+    top: 0%;
+    height: 8%;
+    width: 100%;
+    background-color: #366bb4;
+    border: medium solid #366bb4;
+}
+
+h1{
+    position: absolute;
+    top: 1%;
+    left: 0;
+    right: 0;
+    color: white;
+    text-align: center;
+    margin: auto;
+    font-size: 2vw;
+}
+#overview{
+    position: absolute;
+    top: 3.5%;
+    left: 0;
+    right: 0;
+    color: white;
+    text-align: center;
+    margin: auto;
+    font-size: 1.2vw;
+}
+.h_button{
+    position: absolute;
+    width: 8%;
+    height: 1.7%;
+    margin: auto;
+    background: #214478;
+    text-align:center;
+    color: #FFFFFF;
+    font-size: 1.2vw;
+    font-weight: bold;
+    border-radius: 0.5vw;
+    border: 0;
+}
+.h_button:active{
+    color: #555555;
+    background: #366bb4;
+}
+
+
+#clear_to_button{
+    top: 6%;
+    right: 16%;
+    width: 8%;
+}
+#clear_all_button{
+    top: 6%;
+    right: 7%;
+    width: 8%;
+}
+#reverse_button{
+    top: 6%;
+    left: 7%;
+    width: 17%;
+}
+
+
+input, textarea{
+    position: absolute;
+    background-color: whitesmoke;
+    resize: none;
+}
+.tel{
+    width: 10%;
+    font-size: 2vw;
+}
+
+#to_zip{
+    left: 49%;
+    top: 14.9%;
+    width: 38%;
+    font-size: 4vw;
+}
+#to_add{
+    left: 40%;
+    top: 27%;
+    width: 45%;
+    font-size: 2vw;
+}
+#to_name{
+    left: 40%;
+    top: 39%;
+    width: 40%;
+    font-size: 2vw;
+}
+#to_tel1{
+    left: 45%;
+    top: 45.2%;
+}
+#to_tel2{
+    left: 58.5%;
+    top: 45.2%;
+}
+#to_tel3{
+    left: 72%;
+    top: 45.2%;
+}
+
+
+#from_zip{
+    left: 37.5%;
+    top: 49.3%;
+    width: 16.8%;
+    font-size: 1.5vw;
+}
+#from_add{
+    left: 40%;
+    top: 54%;
+    width: 45%;
+    font-size: 1.3vw;
+}
+#from_name{
+    left: 40%;
+    top: 58.7%;
+    width: 45%;
+    font-size: 1.5vw;
+}
+#from_tel1{
+    left: 45%;
+    top: 63.3%;
+}
+#from_tel2{
+    left: 58.5%;
+    top: 63.3%;
+}
+#from_tel3{
+    left: 72%;
+    top: 63.3%;
+}
+#desc{
+    left: 40%;
+    top: 71%;
+    width: 45%;
+    font-size: 1.3vw;
+}
+
+
+.f_button{
+    position: absolute;
+    background: #366bb4;
+    color: #FFFFFF;
+    font-weight: bold;
+    box-shadow: 0.5vw 0.5vw 0.5vw #555555;
+}
+.f_button:active{
+    color: #555555;
+    background: #214478;
+}
+
+#make_button{
+    top: 80%;
+    width: 25%;
+    height: 5%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    font-size: 3vw;
+    border-radius: 1.5vw;
+}
+#save_button{
+    top: 81.2%;
+    width: 15%;
+    height: 2.5%;
+    left: 20%;
+    font-size: 1.5vw;
+    border-radius: 1vw;
+}
+#load_button{
+    top: 81.2%;
+    width: 15%;
+    height: 2.5%;
+    right: 20%;
+    font-size: 1.5vw;
+    border-radius: 1vw;
+}
+#load_file{
+    display: none;
+}
