@@ -15,7 +15,7 @@ Tested on Safari 11 and Google Chrome.
 
 ## Usage
 
-Open <https://github.com/hamada2029> on your browser and input form.
+Open <https://hamada2029.github.io/letterpack_label/form_plus.html> on your browser and input form.
 
 ## Credits
 
