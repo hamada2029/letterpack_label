@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js"></script>
+    <script>
+        window.onload = function () {
+            var a = 'donate2029';
+            var b = '@';
+            var c = 'xxx.xxx';
+            var button1 = document.querySelector("#button1");
+            button1.setAttribute(
+                'data-clipboard-text',
+                a + b + c
+            );
+            new Clipboard('.btn');
+        };
+    </script>
+    <title>Donation</title>
+</head>
+<body>
+
+    <div>
+        <input type="text" value="donate2029" disabled>
+        @
+        <input type="text" value="xxx.xxx" disabled>
+    </div>
+    <div>
+        <button class="btn" id="button1" data-clipboard-text="">
+            メールアドレスをコピー
+        </button>
+    </div>
+
+
+</body>
+</html>
