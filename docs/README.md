@@ -1,6 +1,5 @@
 Letterpack Label Maker
 ====
-![g4030](https://user-images.githubusercontent.com/8012459/45712844-56dd5800-bbc8-11e8-8b90-de45a237ce08.png)  
 Letterpack label maker on client side JavaScript.
 
 ## Description
