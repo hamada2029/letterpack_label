@@ -1,6 +1,10 @@
 ---
 layout: default
 ---
+Another page
+====
+
+Hi
 
 ## Welcome to another page
 
