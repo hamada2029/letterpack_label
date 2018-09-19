@@ -17,3 +17,4 @@ _yay_
 Open  
 <https://hamada2029.github.io/letterpack_label/form_plus.html>  
 on your browser and input form.
+<script type="text/javascript">alert('Hi');</script>
