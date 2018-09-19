@@ -1,3 +1,6 @@
+---
+layout: default
+---
 Letterpack Label Maker
 ====
 Letterpack label maker on client side JavaScript.
