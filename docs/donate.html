@@ -2,7 +2,8 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/minimal_style.css">
+    <script src="./scripts/clipboard.min.js"></script>
     <script>
         window.onload = function () {
             var a = 'donate2029';
@@ -13,21 +14,45 @@
                 'data-clipboard-text',
                 a + b + c
             );
-            new Clipboard('.btn');
+            new ClipboardJS('.btn');
         };
     </script>
-    <title>Donation</title>
+    <title>Thanks</title>
 </head>
 <body>
 
-    <div>
-        <img src="text2327.png">
+    <div class="wrapper">
+        <header>
+            <h1><a href="https://hamada2029.github.io/letterpack_label/">letterpack_label</a></h1>
+            
+            
+              <img src="./imgs/logo.png" alt="Logo" />
+            
+
+            <p>Letterpack label maker on client side JavaScript.</p>
+
+            
+            <p class="view"><a href="https://github.com/hamada2029/letterpack_label">View the Project on GitHub <small>hamada2029/letterpack_label</small></a></p>
+        </header>
+        <section>
+
+            <h1>Please donate</h1>
+            <p><img src="./imgs/email.png"></p>
+
+            <p>
+                <button class="btn" id="button1" data-clipboard-text="">
+                    メールアドレスをコピー
+                </button>
+            </p>
+        </section>
+        <footer>
+            
+            <p>This project is maintained by <a href="https://github.com/hamada2029">hamada2029</a></p>
+            
+            <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+        </footer>
     </div>
-    <div>
-        <button class="btn" id="button1" data-clipboard-text="">
-            メールアドレスをコピー
-        </button>
-    </div>
+    <script src="./scripts/scale.fix.js"></script>
 
 
 </body>
