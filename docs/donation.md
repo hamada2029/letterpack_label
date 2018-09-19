@@ -15,7 +15,7 @@ Thanks!
             'data-clipboard-text',
             a + b + c
         );
-        new ClipboardJS('.btn');
+        new ClipboardJS('#button1');
     };
 </script>
 
@@ -27,7 +27,7 @@ Thanks!
 
 送付用アドレスをコピー  
 
-* ![email](./imgs/email.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn">クリップボードにコピー</button>  
+* ![email](./imgs/email.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button id="button1">クリップボードにコピー</button>  
 
 下記リンクの「受取人」に上記のアドレスをペーストして、  
 ご希望の金額を送信して下さい。  
