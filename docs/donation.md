@@ -7,14 +7,6 @@ Thanks!
 <script src="./scripts/clipboard.min.js"></script>
 <script>
     window.onload = function () {
-        var a = 'donate2029';
-        var b = '@';
-        var c = 'gmail.com';
-        var button1 = document.querySelector("#button1");
-        button1.setAttribute(
-            'data-clipboard-text',
-            a + b + c
-        );
         new ClipboardJS('#button1');
     };
 </script>
@@ -39,5 +31,17 @@ Thanks!
 ご自分用のギフト券や商品の購入をされるだけでも構いません。  
 よろしくお願いします。
 
-[back](./)
+[back](./)  
+
+<script type="text/javascript">
+    var c = 'gmail.com';
+    var a = 'donate2029';
+    var b = '@';
+    var button1 = document.querySelector("#button1");
+    button1.setAttribute(
+        'data-clipboard-text',
+        a + b + c
+    );
+</script>
+
 
