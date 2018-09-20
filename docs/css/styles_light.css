@@ -192,3 +192,30 @@ input, textarea{
 #load_file{
     display: none;
 }
+
+
+#badges{
+    position: absolute;
+    top: 88.2%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    width: 40.5%;
+    height: 10%;
+}
+#donate{
+    position: absolute;
+    height: 20%;
+    left: 0%;
+}
+#blogger{
+    position: absolute;
+    height: 20%;
+    right: 0%;
+}
+
+
+
+
+
