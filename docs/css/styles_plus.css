@@ -215,6 +215,58 @@ input, textarea{
     right: 0%;
 }
 
+#mask{
+    position:absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    /*background: gray;*/
+    /*子要素は不透明に*/
+    background: rgba(150, 150, 150, 0.9);
+    border: medium solid rgba(150, 150, 150, 0.9);
+    visibility: hidden;
+}
+#frame1{
+    position: absolute;
+    top: 10%;
+    width: 61.8%;
+    height: 61.8%;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+#mask button{
+    position: absolute;
+    top: 73%;
+    width: 8%;
+    height: 1.7%;
+    margin: auto;
+    background: #ff5555;
+    text-align:center;
+    color: #FFFFFF;
+    font-size: 1.2vw;
+    font-weight: bold;
+    border-radius: 0.5vw;
+    border: 0;
+}
+#mask button:active{
+    color: #555555;
+    background: #ff2222;
+}
+#print_button{
+    right: 37.1%;
+}
+#dl_button{
+    right: 28.1%;
+}
+#close_button{
+    right: 19.1%;
+}
+
 
 
 

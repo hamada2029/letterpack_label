@@ -1,8 +1,8 @@
 
 function _defineDoc (ao) {
     pdfMake.fonts = {
-        RictyDiminished: {
-            normal: 'RictyDiminished-Regular.ttf',
+        RictyDiminishedDiscord: {
+            normal: 'RictyDiminishedDiscord-Regular.ttf',
         }
     };
     // 1pt = 0.35278mm
@@ -134,7 +134,7 @@ function _defineDoc (ao) {
                 }
             ],
             defaultStyle: {
-                font: 'RictyDiminished'
+                font: 'RictyDiminishedDiscord'
             }
     };
     return docDefinition;

@@ -26,6 +26,8 @@ This software uses code from several libraries.
 - [pdfmake](http://pdfmake.org/)
 - [ajaxzip3](https://github.com/ajaxzip3)
 - [Ricty Diminished](https://github.com/edihbrandon/RictyDiminished)
+- [spin.js](https://spin.js.org/)
+- [clipboard.js](https://clipboardjs.com/)
 
 ## Author
 

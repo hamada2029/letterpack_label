@@ -43,14 +43,72 @@ function makeAO () {
     ao.desc = shiftLines(ao.desc);
     ao.df = ao.desc[0] === '' ? 3 : 0;
     console.log(ao);
+    // 全角スペース置き換え
+    for (var k in ao) {
+        if(
+            k.indexOf('to_') == 0 ||
+            k.indexOf('from_') == 0 ||
+            k.indexOf('desc') == 0
+        ){
+            var v = ao[k];
+            if(typeof v == 'string'){
+                ao[k] = v.replace('　', '  ');
+            }else if (typeof v == 'object'){
+                for (var i = 0; i < v.length; i++) {
+                    ao[k][i] = v[i].replace('　', '  ');
+                }
+            }
+        }
+    }
+    // console.log(ao);
     return ao;
 }
 
 
 function defineDoc() {
-
     var ao = makeAO();
     return _defineDoc(ao);
-
 }
+
+
+function maskButtonsEnable() {
+    $('#mask button').css('visibility', 'visible');
+}
+function maskButtonsDisable() {
+    $('#mask button').css('visibility', 'hidden');
+}
+
+
+
+function makePDF() {
+    $('#mask').css('visibility', 'visible');
+    maskButtonsDisable();
+    spinner.spin($('#mask')[0]);
+
+    function blobCallback(result){
+        var urlCreator = window.URL || window.webkitURL;
+        var pdfUrl = urlCreator.createObjectURL(result);
+        frame1.location.href = pdfUrl;
+        spinner.stop();
+        maskButtonsEnable();
+    }
+
+    function generate(){
+        try {
+            var dd = defineDoc();
+            var pdfDocGenerator = pdfMake.createPdf(dd);
+            pdfDocGenerator.getBlob(blobCallback);
+        } catch (e) {
+            spinner.stop();
+            alert(e);
+            throw e;
+        }
+    }
+
+    setTimeout(generate, 0);
+    return false;
+}
+
+
+
 
