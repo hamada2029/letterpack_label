@@ -81,9 +81,17 @@ function maskButtonsDisable() {
 
 
 function makePDF() {
-    $('#mask').css('visibility', 'visible');
-    maskButtonsDisable();
-    spinner.spin($('#mask')[0]);
+    try {
+        $('#mask').css('visibility', 'visible');
+        maskButtonsDisable();
+        spinner.stop();  // 状態がわからないのでまず止める
+        spinner.spin($('#mask')[0]);
+    } catch(e) {
+        spinner.stop();
+        alert(e);
+        throw e;
+    }
+
 
     function blobCallback(result){
         var urlCreator = window.URL || window.webkitURL;

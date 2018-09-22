@@ -13,8 +13,10 @@
     <script type="text/javascript" src="./scripts/pdf_script.js"></script>
     <script type="text/javascript" src="./scripts/file_dl.js"></script>
     <script type="text/javascript" src="./scripts/file_load.js"></script>
+    <script type="text/javascript" src="./scripts/spin.js"></script>
 
     <link rel="stylesheet" type="text/css" href="./css/styles_plus.css">
+    <link rel="stylesheet" href="./css/spin.css">
 </head>
 <body>
 
@@ -27,8 +29,8 @@
         <div id="overview">
             フォーム入力だけで作成出来ます。<br>
             文字数オーバーすると赤くなります。(そのままでもPDF出力は可能です。)<br>
-            ライトは<a href="form_light.html" target="_blank">こちら</a>です。<br>
-            PC上で無制限に使いたい方は<a href="https://paymo.life/shops/923e69bf8d/pg4GA2T8UX" target="_blank">有料版</a>をご検討ください。
+            ライトは<a href="form_light.html">こちら</a>です。<br>
+            PC上で無制限に使いたい方は<a href="https://paymo.life/shops/923e69bf8d/pg4GA2T8UX" target="_blank" title="1000円">有料版</a>をご検討ください。
         </div>
         <button id="reverse_button" class="h_button" title="ToとFromを入れ替え">
             Reverse
@@ -76,8 +78,17 @@
 
         </div>
 
+        <div id="mask">
+            <iframe id="frame1" name="frame1"></iframe>
+            <a id="dl_link"></a>
+            <button id="dl_button">Download</button>
+            <button id="print_button">Print</button>
+            <button id="close_button" title="閉じる">x</button>
+        </div>
 
     </div>
+
+
 
     <script type="text/javascript">
         $('#save_button').on('click', fileDL);
@@ -100,14 +111,9 @@
             }
         );
 
-        $('#make_button').on(
-            'click', 
-            function(){
-                var docDefinition = defineDoc();
-                pdfMake.createPdf(docDefinition).open();
-                return false;
-            }
-        );
+        var opts = {length: 38, width: 17, radius: 45, top: '75%'};
+        var spinner = new Spinner(opts);
+        $('#make_button').on('click', makePDF);
 
         $('body').on('load', checkLen);
         $('input[type="text"]').on('keyup', checkLen);
@@ -118,6 +124,29 @@
         $('#reverse_button').on('click', reverse);
         $('#clear_all_button').on('click', clearAll);
         $('#clear_to_button').on('click', clearTo);
+
+
+        $('#dl_button').on(
+            'click',
+            function(){
+                var j = getVs();
+                var link = $('#dl_link')[0];
+                link.download = j.file_name.replace('.json', '.pdf');
+                link.href = frame1.location.href;
+                link.click();
+                link.href = '';
+            }
+        );
+        $('#print_button').on(
+            'click', function(){frame1.print();}
+        );
+        $('#close_button').on(
+            'click',
+            function(){
+                $('#mask').css('visibility', 'hidden');
+                $('#mask button').css('visibility', 'hidden');
+            }
+        );
     </script>
 </body>
 
