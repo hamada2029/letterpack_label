@@ -51,9 +51,8 @@ h1{
     border-radius: 0.5vw;
     border: 0;
 }
-.h_button:active{
-    color: #555555;
-    background: #ff5555;
+button:active{
+    opacity: 0.3;
 }
 
 
@@ -158,10 +157,6 @@ input, textarea{
     font-weight: bold;
     box-shadow: 0.5vw 0.5vw 0.5vw #555555;
 }
-.f_button:active{
-    color: #555555;
-    background: #ff2222;
-}
 
 #make_button{
     top: 80%;
@@ -253,10 +248,7 @@ input, textarea{
     border-radius: 0.5vw;
     border: 0;
 }
-#mask button:active{
-    color: #555555;
-    background: #ff2222;
-}
+
 #print_button{
     right: 37.1%;
 }

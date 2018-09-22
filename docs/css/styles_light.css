@@ -1,6 +1,7 @@
 
 #base_div{
     position: absolute;
+    visibility: hidden;
 }
 
 #base_img{

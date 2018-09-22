@@ -1,29 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
     <script type="text/javascript">
-        // Safariで表示直後にボタンが無反応なのを防ぐ。
-        document.onreadystatechange = function (ev) {
-            if(document.readyState == 'complete'){
-                document.getElementById('base_div').style.visibility = 'visible';
-            }
-        };
+        var light = location.search == '?light';
     </script>
     <title>続・レターパックプラスラベルメイカー</title>
-    <meta charset="utf-8">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
     <script type="text/javascript" src="./scripts/pdfmake.min.js"></script>
     <script type="text/javascript" src="./scripts/form_script.js"></script>
     <script type="text/javascript" src='./scripts/vfs_fonts.js'></script>
-    <script type="text/javascript" src="./scripts/light.js"></script>
+    <script type="text/javascript" src="./scripts/imagedata_plus.js"></script>
+    <script type="text/javascript" src="./scripts/imagedata_light.js"></script>
     <script type="text/javascript" src="./scripts/defineDocCore.js"></script>
     <script type="text/javascript" src="./scripts/pdf_script.js"></script>
     <script type="text/javascript" src="./scripts/file_dl.js"></script>
     <script type="text/javascript" src="./scripts/file_load.js"></script>
     <script type="text/javascript" src="./scripts/spin.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="./css/styles_light.css">
+    <link rel="stylesheet" type="text/css" href="./css/styles_plus.css">
     <link rel="stylesheet" href="./css/spin.css">
 </head>
 <body>
@@ -31,13 +27,13 @@
     <div id="base_div">
         <div id="head1"></div>
 
-        <img id="base_img" src="./imgs/light_base.png">
+        <img id="base_img" src="./imgs/plus_base.png">
 
-        <h1>続・<a href="http://www.post.japanpost.jp/service/letterpack/" target="_blank">レターパックライト</a>ラベルメイカー</h1>
+        <h1>続・<a href="http://www.post.japanpost.jp/service/letterpack/" target="_blank">レターパックプラス</a>ラベルメイカー</h1>
         <div id="overview">
             フォーム入力だけで作成出来ます。<br>
             文字数オーバーすると赤くなります。(そのままでもPDF出力は可能です。)<br>
-            プラスは<a href="form_plus.html">こちら</a>です。<br>
+            <a href="form.html?light">ライトはこちら</a>です。<br>
             PC上で無制限に使いたい方は<a href="https://paymo.life/shops/923e69bf8d/pg4GA2T8UX" target="_blank" title="1000円">有料版</a>をご検討ください。
         </div>
         <button id="reverse_button" class="h_button" title="ToとFromを入れ替え">
@@ -78,10 +74,10 @@
         <div id="badges">
 
             <a href="https://hamada2029.github.io/letterpack_label/donation.html" target="_blank" title="よろしければご寄付をお願いします。15円~">
-                <img id="donate" src="https://img.shields.io/badge/15yen~-donate-366bb4.svg?logo=amazon&style=for-the-badge">
+                <img id="donate" src="https://img.shields.io/badge/15yen~-donate-ff5555.svg?logo=amazon&style=for-the-badge">
             </a>
             <a href="http://satuptown.blogspot.com/2018/09/blog-post.html" target="_blank" title="コメントなど">
-                <img id="blogger" src="https://img.shields.io/badge/blogger-sat_up_town-366bb4.svg?logo=blogger&style=for-the-badge">
+                <img id="blogger" src="https://img.shields.io/badge/blogger-sat_up_town-ff5555.svg?logo=blogger&style=for-the-badge">
             </a>
 
         </div>
@@ -96,7 +92,8 @@
 
     </div>
 
-
+    <script type="text/javascript" src="./scripts/plus_or_light.js">
+    </script>
 
     <script type="text/javascript">
         $('#save_button').on('click', fileDL);

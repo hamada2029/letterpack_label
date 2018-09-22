@@ -1,4 +1,12 @@
 
+function getImagedata () {
+    if (location.search == '?light') {
+        return imagedata_light;
+    }
+    return imagedata_plus;
+}
+
+
 function _defineDoc (ao) {
     pdfMake.fonts = {
         RictyDiminishedDiscord: {
@@ -11,7 +19,7 @@ function _defineDoc (ao) {
             pageSize: 'A4',
             content: [
                 {
-                    image: imagedata,
+                    image: getImagedata(),
                     absolutePosition: {x:0, y:0},
                     width: 594.35
                 },
