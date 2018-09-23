@@ -81,24 +81,16 @@ function maskButtonsDisable() {
 
 
 function makePDF() {
-    try {
-        $('#mask').css('visibility', 'visible');
-        maskButtonsDisable();
-        spinner.stop();  // 状態がわからないのでまず止める
-        spinner.spin($('#mask')[0]);
-    } catch(e) {
-        spinner.stop();
-        alert(e);
-        throw e;
-    }
-
+    $('#mask').css('visibility', 'visible');
+    maskButtonsDisable();
+    sp.spin(document.getElementById('spin'));
 
     function blobCallback(result){
         var urlCreator = window.URL || window.webkitURL;
         var pdfUrl = urlCreator.createObjectURL(result);
         frame1.location.href = pdfUrl;
-        spinner.stop();
         maskButtonsEnable();
+        sp.stop();
     }
 
     function generate(){
@@ -107,7 +99,7 @@ function makePDF() {
             var pdfDocGenerator = pdfMake.createPdf(dd);
             pdfDocGenerator.getBlob(blobCallback);
         } catch (e) {
-            spinner.stop();
+            sp.stop();
             alert(e);
             throw e;
         }

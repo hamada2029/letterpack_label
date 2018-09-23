@@ -10,7 +10,6 @@ if (location.search == '?light') {
 
     var lightColor1 = '#366bb4';
     var lightColor2 = '#214478';
-    // var lightColor3 = '#366bb4';
 
     document.querySelector('#head1').style['background-color'] = lightColor1;
     document.querySelector('#head1').style.border = 'medium solid ' + lightColor1;

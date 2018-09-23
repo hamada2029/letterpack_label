@@ -14,8 +14,8 @@
     top: 0%;
     height: 9%;
     width: 100%;
-    background-color: #366bb4;
-    border: medium solid #366bb4;
+    background-color: #ff5555;
+    border: medium solid #ff5555;
 }
 
 h1{
@@ -44,7 +44,7 @@ h1{
     width: 8%;
     height: 1.7%;
     margin: auto;
-    background: #214478;
+    background: #ee0000;
     text-align:center;
     color: #FFFFFF;
     font-size: 1.2vw;
@@ -52,9 +52,8 @@ h1{
     border-radius: 0.5vw;
     border: 0;
 }
-.h_button:active{
-    color: #555555;
-    background: #366bb4;
+button:active{
+    opacity: 0.3;
 }
 
 
@@ -154,14 +153,10 @@ input, textarea{
 
 .f_button{
     position: absolute;
-    background: #366bb4;
+    background: #ff5555;
     color: #FFFFFF;
     font-weight: bold;
     box-shadow: 0.5vw 0.5vw 0.5vw #555555;
-}
-.f_button:active{
-    color: #555555;
-    background: #214478;
 }
 
 #make_button{
@@ -246,7 +241,7 @@ input, textarea{
     width: 8%;
     height: 1.7%;
     margin: auto;
-    background: #366bb4;
+    background: #ff5555;
     text-align:center;
     color: #FFFFFF;
     font-size: 1.2vw;
@@ -254,10 +249,7 @@ input, textarea{
     border-radius: 0.5vw;
     border: 0;
 }
-#mask button:active{
-    color: #555555;
-    background: #214478;
-}
+
 #print_button{
     right: 37.1%;
 }
@@ -267,10 +259,6 @@ input, textarea{
 #close_button{
     right: 19.1%;
 }
-
-
-
-
 
 
 

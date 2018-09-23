@@ -2,10 +2,34 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="./css/spin.css">
+    <script type="text/javascript" src="./scripts/spin.js"></script>
     <script type="text/javascript">
-        var light = location.search == '?light';
+        // Safariで表示直後にボタンが無反応なのを防ぐ。
+        // + spinner
+        var op = {
+            length: 38, width: 17, radius: 45,
+            top: '50%', position: 'fixed'
+        };
+        var sp = new Spinner(op);
+        document.onreadystatechange = function (ev) {
+            var state = document.readyState;
+            if (state == 'interactive') {
+                sp.spin(document.getElementById('spin'));
+            }else if (state == 'complete') {
+                var base_div = document.getElementById('base_div');
+                base_div.style.visibility = 'visible';
+                sp.stop();
+            }
+        };
     </script>
     <title>続・レターパックプラスラベルメイカー</title>
+</head>
+<body>
+
+    <div id="spin"></div>
+
+    <link rel="stylesheet" type="text/css" href="./css/styles.css">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
     <script type="text/javascript" src="./scripts/pdfmake.min.js"></script>
@@ -17,12 +41,6 @@
     <script type="text/javascript" src="./scripts/pdf_script.js"></script>
     <script type="text/javascript" src="./scripts/file_dl.js"></script>
     <script type="text/javascript" src="./scripts/file_load.js"></script>
-    <script type="text/javascript" src="./scripts/spin.js"></script>
-
-    <link rel="stylesheet" type="text/css" href="./css/styles_plus.css">
-    <link rel="stylesheet" href="./css/spin.css">
-</head>
-<body>
 
     <div id="base_div">
         <div id="head1"></div>
@@ -90,6 +108,7 @@
             <button id="close_button" title="閉じる">x</button>
         </div>
 
+
     </div>
 
     <script type="text/javascript" src="./scripts/plus_or_light.js">
@@ -116,8 +135,6 @@
             }
         );
 
-        var opts = {length: 38, width: 17, radius: 45, top: '75%'};
-        var spinner = new Spinner(opts);
         $('#make_button').on('click', makePDF);
 
         $('body').on('load', checkLen);
