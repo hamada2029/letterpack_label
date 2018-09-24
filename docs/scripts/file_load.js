@@ -12,10 +12,21 @@ function setData(ev) {
     var j = JSON.parse(bin);
     console.log(j);
     for (var k in j) {
-        var e = $('#' + k);
-        if(e.length == 0){continue;}
-        e.val(j[k]);
+        var e = document.getElementById(k);
+        if(e === null){continue;}
+        e.value = j[k];
     }
     $('#load_file').val(null);
 }
 
+
+function fromStorage () {
+    if('address' in sessionStorage){
+        var j = JSON.parse(sessionStorage.address);
+        for (var k in j) {
+            var e = document.getElementById(k);
+            if(e === null){continue;}
+            e.value = j[k];
+        }
+    }
+}

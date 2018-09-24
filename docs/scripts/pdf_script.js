@@ -20,9 +20,15 @@ function makeAO () {
     } else if (ao.to_add.length == 3) {
         ao.to_add = ['', ao.to_add[0], ao.to_add[1], ao.to_add[2]];
     }
+    ao.to_add1 = ao.to_add[0];
+    ao.to_add2 = ao.to_add[1];
+    ao.to_add3 = ao.to_add[2];
+    ao.to_add4 = ao.to_add[3];
 
     ao.to_name = $('#to_name').val().trim().split('\n');
     ao.to_name = shiftLines(ao.to_name);
+    ao.to_name1 = ao.to_name[0];
+    ao.to_name2 = ao.to_name[1];
     ao.to_tel1 = $('#to_tel1').val();
     ao.to_tel2 = $('#to_tel2').val();
     ao.to_tel3 = $('#to_tel3').val();
@@ -33,33 +39,40 @@ function makeAO () {
     ao.from_zip2 = ao.from_zip.slice(3, 7);
     ao.from_add = $('#from_add').val().trim().split('\n');
     ao.from_add = shiftLines(ao.from_add);
+    ao.from_add1 = ao.from_add[0];
+    ao.from_add2 = ao.from_add[1];
     ao.from_name = $('#from_name').val().trim().split('\n');
     ao.from_name = shiftLines(ao.from_name);
+    ao.from_name1 = ao.from_name[0];
+    ao.from_name2 = ao.from_name[1];
     ao.from_tel1 = $('#from_tel1').val();
     ao.from_tel2 = $('#from_tel2').val();
     ao.from_tel3 = $('#from_tel3').val();
 
     ao.desc = $('#desc').val().trim().split('\n');
     ao.desc = shiftLines(ao.desc);
+    ao.desc1 = ao.desc[0];
+    ao.desc2 = ao.desc[1];
+    // 1行のときちょっと上げる
     ao.df = ao.desc[0] === '' ? 3 : 0;
     console.log(ao);
     // 全角スペース置き換え
-    for (var k in ao) {
-        if(
-            k.indexOf('to_') == 0 ||
-            k.indexOf('from_') == 0 ||
-            k.indexOf('desc') == 0
-        ){
-            var v = ao[k];
-            if(typeof v == 'string'){
-                ao[k] = v.replace('　', '  ');
-            }else if (typeof v == 'object'){
-                for (var i = 0; i < v.length; i++) {
-                    ao[k][i] = v[i].replace('　', '  ');
-                }
-            }
-        }
-    }
+    // for (var k in ao) {
+    //     if(
+    //         k.indexOf('to_') == 0 ||
+    //         k.indexOf('from_') == 0 ||
+    //         k.indexOf('desc') == 0
+    //     ){
+    //         var v = ao[k];
+    //         if(typeof v == 'string'){
+    //             ao[k] = v.replace('　', '  ');
+    //         }else if (typeof v == 'object'){
+    //             for (var i = 0; i < v.length; i++) {
+    //                 ao[k][i] = v[i].replace('　', '  ');
+    //             }
+    //         }
+    //     }
+    // }
     // console.log(ao);
     return ao;
 }
@@ -81,6 +94,7 @@ function maskButtonsDisable() {
 
 
 function makePDF() {
+    toStorage();
     $('#mask').css('visibility', 'visible');
     maskButtonsDisable();
     sp.spin(document.getElementById('spin'));

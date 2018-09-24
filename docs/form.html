@@ -105,9 +105,11 @@
     <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
     <script type="text/javascript" src="./scripts/pdfmake.min.js"></script>
     <script type="text/javascript" src="./scripts/form_script.js"></script>
-    <script type="text/javascript" src='./scripts/vfs_fonts.js'></script>
+    <script type="text/javascript" src='./scripts/mplus-2m-regular.js'></script>
+    <!-- <script type="text/javascript" src='./scripts/vfs_fonts.js'></script> -->
     <script type="text/javascript" src="./scripts/imagedata_plus.js"></script>
     <script type="text/javascript" src="./scripts/imagedata_light.js"></script>
+    <script type="text/javascript" src="./scripts/position.js"></script>
     <script type="text/javascript" src="./scripts/defineDocCore.js"></script>
     <script type="text/javascript" src="./scripts/pdf_script.js"></script>
     <script type="text/javascript" src="./scripts/file_dl.js"></script>
@@ -117,12 +119,12 @@
     </script>
 
     <script type="text/javascript">
-        $('#save_button').on('click', fileDL);
-        $('#load_button').on('click', function(){
-            $('#load_file').click();
-        });
-        $('#load_file').on('change', loadData);
-
+        document.getElementById('save_button').onclick = fileDL;
+        var load_file = document.getElementById('load_file');
+        document.getElementById('load_button').onclick = function(){
+            load_file.click(); 
+        };
+        load_file.onchange = loadData;
 
         $('#to_zip').on(
             'keyup',
@@ -171,6 +173,8 @@
                 $('#mask button').css('visibility', 'hidden');
             }
         );
+        
+        fromStorage();
     </script>
 
 </html>

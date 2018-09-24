@@ -45,4 +45,10 @@ function fileDL() {
 }
 
 
+function toStorage () {
+    var o = getVs();
+    var js = JSON.stringify(o, null, 4);
+    sessionStorage.address = js;
+}
+
 
