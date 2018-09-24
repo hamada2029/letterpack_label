@@ -25,10 +25,11 @@ This software uses code from several libraries.
 - [jQuery](https://jquery.com/)
 - [pdfmake](http://pdfmake.org/)
 - [ajaxzip3](https://github.com/ajaxzip3)
-- [Ricty Diminished](https://github.com/edihbrandon/RictyDiminished)
+- [M+ FONTS](http://mplus-fonts.osdn.jp/)
 - [spin.js](https://spin.js.org/)
 - [clipboard.js](https://clipboardjs.com/)
 
 ## Author
 
 [hamada2029](https://github.com/hamada2029)
+
