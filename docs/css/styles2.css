@@ -1,0 +1,128 @@
+
+
+:root{
+    --plus-color1: #ff5555;
+    --plus-color2: #ee0000;
+}
+body{
+    position: absolute;
+    width: 100%;
+    height: 139.5vw;
+    background-color: whitesmoke;
+}
+#base_div{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: whitesmoke;
+}
+#base_img{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+}
+#head1{
+    position: absolute;
+    top: 0%;
+    height: 9%;
+    width: 100%;
+    background-color: var(--plus-color1);
+    background-image: url('../imgs/logo.svg');
+    background-size: 110%;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
+#head_title{
+    position: absolute;
+    top: 42%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin: auto;
+    color: white;
+    font-size: 2vw;
+    font-weight: bold;
+}
+
+.h_btn{
+    position: absolute;
+    top: 9%;
+    width: 20%;
+    height: 1.7%;
+    border: 0;
+    color: white;
+    font-size: 1.2vw;
+    font-weight: bold; 
+}
+button:active{
+    opacity: 0.3;
+}
+#reverse_btn{
+    left: 0%;
+    background: var(--plus-color2);
+}
+#clear_to_btn{
+    left: 20%;
+    background: var(--plus-color1);
+}
+#clear_all{
+    left: 40%;
+    background: var(--plus-color2);
+}
+#blogger{
+    left: 60%;
+    background: var(--plus-color1);
+}
+#donate{
+    left: 80%;
+    background: var(--plus-color2);
+}
+
+input, textarea{
+    position: absolute;
+    background-color: whitesmoke;
+    resize: none;
+    border:none;
+}
+#to_zip{
+    left: 48.9%;
+    top: 14.9%;
+    width: 38%;
+    font-size: 4vw;
+}
+
+
+#foot1{
+    position: fixed;
+    bottom: 0%;
+    height: 7%;
+    width: 100%;
+    background-color: white;
+}
+.f_btn{
+    position: absolute;
+    top: 0%;
+    width: calc(100% / 3);
+    height: 100%;
+    border: 0;
+    color: white;
+    font-weight: bold;
+}
+#save_btn{
+    left: 0%;
+    background: var(--plus-color1);
+    font-size: 1.5vw;
+}
+#make_btn{
+    left: calc(100% / 3);
+    background: var(--plus-color2);
+    font-size: 2.2vw;
+}
+#load_btn{
+    right: 0%;
+    background: var(--plus-color1);
+    font-size: 1.5vw;
+}
+
+
