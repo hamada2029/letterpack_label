@@ -20,6 +20,7 @@
                 var base_div = document.getElementById('base_div');
                 base_div.style.visibility = 'visible';
                 sp.stop();
+                document.getElementById('to_zip').focus();
             }
         };
     </script>
@@ -52,7 +53,7 @@
             Clear All
         </button>
         
-        <input type="text" name="to_zip" id="to_zip" placeholder="郵便番号" title="半角数字7桁" autofocus>
+        <input type="text" name="to_zip" id="to_zip" placeholder="郵便番号" title="半角数字7桁">
         <textarea name="to_add" id="to_add" placeholder="住所 (14文字 x 4行)" rows=4 title="郵便番号から自動入力"></textarea>
         <textarea name="to_name" id="to_name" placeholder="名前 (13文字 x 2行)" rows=2></textarea>
         <input type="text" name="to_tel1" id="to_tel1" placeholder="TEL1" title="半角数字4桁" class="tel">
