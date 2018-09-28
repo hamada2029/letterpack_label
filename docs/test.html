@@ -26,8 +26,9 @@
     </script>
     <link rel="stylesheet" type="text/css" href="css/styles2.css">
     <script src="https://yubinbango.github.io/yubinbango/yubinbango.js" charset="UTF-8"></script>
-    <script type="text/javascript" src="./scripts/file_dl.js"></script>
-    <script type="text/javascript" src="./scripts/file_load.js"></script>
+    <script type="text/javascript" src="scripts/file_dl.js"></script>
+    <script type="text/javascript" src="scripts/file_load.js"></script>
+    <script type="text/javascript" src="scripts/form_script.js"></script>
     <title>続・レターパックプラスラヴェルメイカー</title>
 </head>
 <body>
@@ -49,7 +50,7 @@
     <button id="clear_to_btn" class="h_btn" title="お届け先削除">Clear To</button>
     <button id="clear_all_btn" class="h_btn" title="全削除">Clear All</button>
     <button id="blogger" class="h_btn" title="コメントなど">Blogger</button>
-    <button id="donate" class="h_btn" title="よろしければご寄付をお願いします。15円~">Donate</button>
+    <button id="donation" class="h_btn" title="よろしければご寄付をお願いします。15円~">Donation</button>
 
     <form class="h-adr">
         <span class="p-country-name">Japan</span>
@@ -78,12 +79,21 @@
         <button id="load_btn" class="f_btn" title="jsonファイルから読み込み">Load</button>
         <input type="file" name="load_file" id="load_file" accept=".json">
     </div>
+
+    <div id="mask">
+        <iframe id="frame1" name="frame1"></iframe>
+        <a id="dl_link"></a>
+        <button id="dl_btn">Download</button>
+        <button id="print_btn">Print</button>
+        <button id="close_btn" title="閉じる">x</button>
+    </div>
+
 </div>
     <script type="text/javascript">
         document.getElementById('blogger').onclick = function () {
             open('http://satuptown.blogspot.com/2018/09/blog-post.html');
         };
-        document.getElementById('donate').onclick = function () {
+        document.getElementById('donation').onclick = function () {
             open('https://hamada2029.github.io/letterpack_label/donation.html');
         };
         document.getElementById('make_btn').onclick = function () {
@@ -95,6 +105,21 @@
             load_file.click(); 
         };
         load_file.onchange = loadData;
+
+        document.body.onload = checkLen;
+        document.body.onload = checkAreaLen;
+        q2n('input[type="text"]').forEach(function(e, i){
+            e.onkeyup = checkLen;
+        });
+        q2n('textarea').forEach(function(e, i){
+            e.onkeyup = checkAreaLen;
+        });
+
+        document.getElementById('reverse_btn').onclick = reverse;
+        document.getElementById('clear_all_btn').onclick = clearAll;
+        document.getElementById('clear_to_btn').onclick = clearTo;
+
+
     </script>
 </body>
 

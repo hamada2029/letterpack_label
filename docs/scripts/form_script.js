@@ -23,6 +23,12 @@ function CountWidth(str) {
 }
 
 
+function q2n (selector) {  // for IE + Edge
+    var nlist = document.querySelectorAll(selector);
+    return Array.prototype.slice.call(nlist, 0);
+}
+
+
 function checkLen(){
 
     var limits = {
@@ -36,9 +42,7 @@ function checkLen(){
         from_tel3: 4 * wRatio
     };
 
-    var nlist = document.querySelectorAll('input[type="text"]');
-    var nd = Array.prototype.slice.call(nlist, 0); 
-    nd.forEach(        
+    q2n('input[type="text"]').forEach(        
         function(e, i){
             if(CountWidth(e.value) > limits[e.id]){
                 e.style.backgroundColor='#eeabaf';
@@ -59,9 +63,7 @@ function checkAreaLen() {
         desc: [19, 2]
     };
 
-    var nlist = document.querySelectorAll('textarea');
-    var nd = Array.prototype.slice.call(nlist, 0);
-    nd.forEach(
+    q2n('textarea').forEach(
         function(e, i){
             var lines = e.value.split('\n');
 
@@ -89,11 +91,7 @@ function clearAll() {
         return;
     }
 
-    var nlist = document.querySelectorAll(
-        'input[type="text"], textarea'
-    );
-    var nd = Array.prototype.slice.call(nlist, 0);
-    nd.forEach(
+    q2n('input[type="text"], textarea').forEach(
         function (e, i) {
             e.value = '';
         }
@@ -104,11 +102,7 @@ function clearTo() {
     if(! confirm('お届け先を削除します。')){
         return;
     }
-    var nlist = document.querySelectorAll(
-        'input[id^="to_"], textarea[id^="to_"]'
-    );
-    var nd = Array.prototype.slice.call(nlist, 0);
-    nd.forEach(
+    q2n('input[id^="to_"], textarea[id^="to_"]').forEach(
         function (e, i) {
             e.value = '';
         }
