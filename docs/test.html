@@ -25,6 +25,8 @@
         };
     </script>
     <link rel="stylesheet" type="text/css" href="css/styles2.css">
+    <script type="text/javascript" src="./scripts/file_dl.js"></script>
+    <script type="text/javascript" src="./scripts/file_load.js"></script>
     <title>続・レターパックプラスラヴェルメイカー</title>
 </head>
 <body>
@@ -34,37 +36,60 @@
     <div id="head1">
         <a id="head_title" href="http://www.post.japanpost.jp/service/letterpack/" target="_blank">
             続・レターパックプラスラヴェルメイカー
-        <a>
+        </a>
+        <div id="overview">
+            フォーム入力だけで作成出来ます。<br>
+            文字数オーバーすると赤くなります。(そのままでもPDF出力は可能です。)<br>
+            <a href="form.html?light">ライトはこちら</a>です。<br>
+            PC上で無制限に使いたい方は<a href="https://paymo.life/shops/923e69bf8d/pg4GA2T8UX" target="_blank" title="1000円">有料版</a>をご検討ください。
+        </div>
     </div>
-    <button id="reverse_btn" class="h_btn" title="ToとFromを入れ替え" onclick="alert();">Reverse</button>
+    <button id="reverse_btn" class="h_btn" title="ToとFromを入れ替え">Reverse</button>
     <button id="clear_to_btn" class="h_btn" title="お届け先削除">Clear To</button>
-    <button id="clear_all" class="h_btn" title="全削除">Clear All</button>
+    <button id="clear_all_btn" class="h_btn" title="全削除">Clear All</button>
     <button id="blogger" class="h_btn" title="コメントなど">Blogger</button>
     <button id="donate" class="h_btn" title="よろしければご寄付をお願いします。15円~">Donate</button>
 
     <input type="text" name="to_zip" id="to_zip" placeholder="郵便番号" title="半角数字7桁">
+    <textarea name="to_add" id="to_add" placeholder="住所 (14文字 x 4行)" rows=4 title="郵便番号から自動入力"></textarea>
+    <textarea name="to_name" id="to_name" placeholder="名前 (13文字 x 2行)" rows=2></textarea>
+    <input type="text" name="to_tel1" id="to_tel1" placeholder="TEL1" title="半角数字4桁" class="tel">
+    <input type="text" name="to_tel2" id="to_tel2" placeholder="TEL2" title="半角数字4桁" class="tel">
+    <input type="text" name="to_tel3" id="to_tel3" placeholder="TEL3" title="半角数字4桁" class="tel">
+
+    <input type="text" name="from_zip" id="from_zip" placeholder="郵便番号" title="半角数字7桁">
+    <textarea name="from_add" id="from_add" placeholder="住所 (20文字 x 2行)" rows=2 title="郵便番号から自動入力"></textarea>
+    <textarea name="from_name" id="from_name" placeholder="名前 (20文字 x 2行)" rows=2></textarea>
+    <input type="text" name="from_tel1" id="from_tel1" placeholder="TEL1" title="半角数字4桁" class="tel">
+    <input type="text" name="from_tel2" id="from_tel2" placeholder="TEL2" title="半角数字4桁" class="tel">
+    <input type="text" name="from_tel3" id="from_tel3" placeholder="TEL3" title="半角数字4桁" class="tel">
+    <textarea name="desc" id="desc" placeholder="品名 (19文字 x 2行)" rows=2></textarea>
+
 
     <div id="foot1">
         <button id="save_btn" class="f_btn" title="入力内容をファイルに保存">Save</button>
         <button id="make_btn" class="f_btn" title="pdf作成">Make PDF</button>
         <button id="load_btn" class="f_btn" title="jsonファイルから読み込み">Load</button>
+        <input type="file" name="load_file" id="load_file" accept=".json">
     </div>
 </div>
-<!--     <script type="text/javascript">
-        document.getElementById('blogger').addEventListener(
-            'click', function () {
-                open('http://satuptown.blogspot.com/2018/09/blog-post.html');
-            }, false
-        );
-        document.getElementById('donate').addEventListener(
-            'click', function () {
-                open('https://hamada2029.github.io/letterpack_label/donation.html');
-            }, false
-        );        
+    <script type="text/javascript">
+        document.getElementById('blogger').onclick = function () {
+            open('http://satuptown.blogspot.com/2018/09/blog-post.html');
+        };
+        document.getElementById('donate').onclick = function () {
+            open('https://hamada2029.github.io/letterpack_label/donation.html');
+        };
         document.getElementById('make_btn').onclick = function () {
             alert();
         };
-    </script> -->
+        document.getElementById('save_btn').onclick = fileDL;
+        var load_file = document.getElementById('load_file');
+        document.getElementById('load_btn').onclick = function(){
+            load_file.click(); 
+        };
+        load_file.onchange = loadData;
+    </script>
 </body>
 
 </html>

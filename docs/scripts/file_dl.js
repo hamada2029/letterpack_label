@@ -1,19 +1,19 @@
 
 function getVs () {
     var j = {
-        to_zip: $('#to_zip').val(),
-        to_add: $('#to_add').val(),
-        to_name: $('#to_name').val(),
-        to_tel1: $('#to_tel1').val(),
-        to_tel2: $('#to_tel2').val(),
-        to_tel3: $('#to_tel3').val(),
-        from_zip: $('#from_zip').val(),
-        from_add: $('#from_add').val(),
-        from_name: $('#from_name').val(),
-        from_tel1: $('#from_tel1').val(),
-        from_tel2: $('#from_tel2').val(),
-        from_tel3: $('#from_tel3').val(),
-        desc: $('#desc').val()
+        to_zip: document.getElementById('to_zip').value,
+        to_add: document.getElementById('to_add').value,
+        to_name: document.getElementById('to_name').value,
+        to_tel1: document.getElementById('to_tel1').value,
+        to_tel2: document.getElementById('to_tel2').value,
+        to_tel3: document.getElementById('to_tel3').value,
+        from_zip: document.getElementById('from_zip').value,
+        from_add: document.getElementById('from_add').value,
+        from_name: document.getElementById('from_name').value,
+        from_tel1: document.getElementById('from_tel1').value,
+        from_tel2: document.getElementById('from_tel2').value,
+        from_tel3: document.getElementById('from_tel3').value,
+        desc: document.getElementById('desc').value
     };
     var tn = j.to_name.trim().split('\n');
     tn = tn[tn.length - 1];

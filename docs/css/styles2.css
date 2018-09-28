@@ -1,15 +1,16 @@
 
-
 :root{
     --plus-color1: #ff5555;
     --plus-color2: #ee0000;
 }
+
 body{
     position: absolute;
     width: 100%;
     height: 139.5vw;
     background-color: whitesmoke;
 }
+
 #base_div{
     position: absolute;
     width: 100%;
@@ -23,6 +24,7 @@ body{
     left: 0%;
     width: 100%;
 }
+
 #head1{
     position: absolute;
     top: 0%;
@@ -36,7 +38,7 @@ body{
 }
 #head_title{
     position: absolute;
-    top: 42%;
+    top: 12%;
     left: 0;
     right: 0;
     text-align: center;
@@ -44,6 +46,16 @@ body{
     color: white;
     font-size: 2vw;
     font-weight: bold;
+}
+#overview{
+    position: absolute;
+    top: 35%;
+    left: 0;
+    right: 0;
+    color: white;
+    text-align: center;
+    margin: auto;
+    font-size: 1.2vw;
 }
 
 .h_btn{
@@ -67,7 +79,7 @@ button:active{
     left: 20%;
     background: var(--plus-color1);
 }
-#clear_all{
+#clear_all_btn{
     left: 40%;
     background: var(--plus-color2);
 }
@@ -86,11 +98,78 @@ input, textarea{
     resize: none;
     border:none;
 }
+.tel{
+    width: 10%;
+    font-size: 2vw;
+}
+
 #to_zip{
     left: 48.9%;
     top: 14.9%;
     width: 38%;
     font-size: 4vw;
+}
+#to_add{
+    left: 40%;
+    top: 28%;
+    width: 45%;
+    font-size: 2vw;
+}
+#to_name{
+    left: 40%;
+    top: 39.5%;
+    width: 40%;
+    font-size: 2vw;
+}
+#to_tel1{
+    left: 45%;
+    top: 45.6%;
+}
+#to_tel2{
+    left: 58.5%;
+    top: 45.6%;
+}
+#to_tel3{
+    left: 72%;
+    top: 45.6%;
+}
+
+
+#from_zip{
+    left: 37.4%;
+    top: 49.6%;
+    width: 16.8%;
+    font-size: 1.5vw;
+}
+#from_add{
+    left: 40%;
+    top: 54.5%;
+    width: 45%;
+    font-size: 1.3vw;
+}
+#from_name{
+    left: 40%;
+    top: 59.2%;
+    width: 45%;
+    font-size: 1.5vw;
+}
+#from_tel1{
+    left: 45%;
+    top: 63.85%;
+}
+#from_tel2{
+    left: 58.5%;
+    top: 63.85%;
+}
+#from_tel3{
+    left: 72%;
+    top: 63.85%;
+}
+#desc{
+    left: 40%;
+    top: 71.5%;
+    width: 45%;
+    font-size: 1.3vw;
 }
 
 
@@ -124,6 +203,9 @@ input, textarea{
     right: 0%;
     background: var(--plus-color1);
     font-size: 1.8vw;
+}
+#load_file{
+    display: none;
 }
 
 
