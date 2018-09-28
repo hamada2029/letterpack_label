@@ -36,8 +36,10 @@ function checkLen(){
         from_tel3: 4 * wRatio
     };
 
-    $('input[type="text"]').each(
-        function(i, e){
+    var nlist = document.querySelectorAll('input[type="text"]');
+    var nd = Array.prototype.slice.call(nlist, 0); 
+    nd.forEach(        
+        function(e, i){
             if(CountWidth(e.value) > limits[e.id]){
                 e.style.backgroundColor='#eeabaf';
             }else{
@@ -45,7 +47,6 @@ function checkLen(){
             }
         }
     );
-
 }
 
 
@@ -58,8 +59,10 @@ function checkAreaLen() {
         desc: [19, 2]
     };
 
-    $('textarea').each(
-        function(i, e){
+    var nlist = document.querySelectorAll('textarea');
+    var nd = Array.prototype.slice.call(nlist, 0);
+    nd.forEach(
+        function(e, i){
             var lines = e.value.split('\n');
 
             if(lines.length > limits[e.id][1]){
@@ -85,13 +88,13 @@ function clearAll() {
     if(! confirm('全て削除します。')){
         return;
     }
-    $('input[type="text"]').each(
-        function (i, e) {
-            e.value = '';
-        }
+
+    var nlist = document.querySelectorAll(
+        'input[type="text"], textarea'
     );
-     $('textarea').each(
-        function (i, e) {
+    var nd = Array.prototype.slice.call(nlist, 0);
+    nd.forEach(
+        function (e, i) {
             e.value = '';
         }
     );
@@ -101,26 +104,28 @@ function clearTo() {
     if(! confirm('お届け先を削除します。')){
         return;
     }
-    $('input[id^="to_"]').each(
-        function (i, e) {
+    var nlist = document.querySelectorAll(
+        'input[id^="to_"], textarea[id^="to_"]'
+    );
+    var nd = Array.prototype.slice.call(nlist, 0);
+    nd.forEach(
+        function (e, i) {
             e.value = '';
         }
     );
-     $('textarea[id^="to_"]').each(
-        function (i, e) {
-            e.value = '';
-        }
-    );
+
 }
 
 function reverse() {
     var ar = ['zip', 'add', 'name', 'tel1', 'tel2', 'tel3'];
     for (var i = 0; i < ar.length; i++) {
         var e = ar[i];
-        var to_val = $('#to_' + e).val();
-        var from_val = $('#from_' + e).val();
-        $('#from_' + e).val(to_val);
-        $('#to_' + e).val(from_val);
+        var to_e = document.getElementById('to_' + e);
+        var from_e = document.getElementById('from_' + e);
+        var to_val = to_e.value;
+        var from_val = from_e.value;
+        from_e.value = to_val;
+        to_e.value = from_val;
     }
 }
 
