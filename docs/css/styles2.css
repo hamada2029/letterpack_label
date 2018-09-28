@@ -15,6 +15,7 @@ body{
     width: 100%;
     height: 100%;
     background-color: whitesmoke;
+    visibility: hidden;
 }
 #base_img{
     position: absolute;
@@ -112,7 +113,7 @@ input, textarea{
 #save_btn{
     left: 0%;
     background: var(--plus-color1);
-    font-size: 1.5vw;
+    font-size: 1.8vw;
 }
 #make_btn{
     left: calc(100% / 3);
@@ -122,7 +123,7 @@ input, textarea{
 #load_btn{
     right: 0%;
     background: var(--plus-color1);
-    font-size: 1.5vw;
+    font-size: 1.8vw;
 }
 
 
