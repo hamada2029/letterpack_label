@@ -92,6 +92,9 @@ button:active{
     background: var(--plus-color2);
 }
 
+span.p-country-name{
+    display: none;
+}
 input, textarea{
     position: absolute;
     background-color: whitesmoke;

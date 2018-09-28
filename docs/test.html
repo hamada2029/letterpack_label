@@ -25,6 +25,7 @@
         };
     </script>
     <link rel="stylesheet" type="text/css" href="css/styles2.css">
+    <script src="https://yubinbango.github.io/yubinbango/yubinbango.js" charset="UTF-8"></script>
     <script type="text/javascript" src="./scripts/file_dl.js"></script>
     <script type="text/javascript" src="./scripts/file_load.js"></script>
     <title>続・レターパックプラスラヴェルメイカー</title>
@@ -50,20 +51,25 @@
     <button id="blogger" class="h_btn" title="コメントなど">Blogger</button>
     <button id="donate" class="h_btn" title="よろしければご寄付をお願いします。15円~">Donate</button>
 
-    <input type="text" name="to_zip" id="to_zip" placeholder="郵便番号" title="半角数字7桁">
-    <textarea name="to_add" id="to_add" placeholder="住所 (14文字 x 4行)" rows=4 title="郵便番号から自動入力"></textarea>
-    <textarea name="to_name" id="to_name" placeholder="名前 (13文字 x 2行)" rows=2></textarea>
-    <input type="text" name="to_tel1" id="to_tel1" placeholder="TEL1" title="半角数字4桁" class="tel">
-    <input type="text" name="to_tel2" id="to_tel2" placeholder="TEL2" title="半角数字4桁" class="tel">
-    <input type="text" name="to_tel3" id="to_tel3" placeholder="TEL3" title="半角数字4桁" class="tel">
-
-    <input type="text" name="from_zip" id="from_zip" placeholder="郵便番号" title="半角数字7桁">
-    <textarea name="from_add" id="from_add" placeholder="住所 (20文字 x 2行)" rows=2 title="郵便番号から自動入力"></textarea>
-    <textarea name="from_name" id="from_name" placeholder="名前 (20文字 x 2行)" rows=2></textarea>
-    <input type="text" name="from_tel1" id="from_tel1" placeholder="TEL1" title="半角数字4桁" class="tel">
-    <input type="text" name="from_tel2" id="from_tel2" placeholder="TEL2" title="半角数字4桁" class="tel">
-    <input type="text" name="from_tel3" id="from_tel3" placeholder="TEL3" title="半角数字4桁" class="tel">
-    <textarea name="desc" id="desc" placeholder="品名 (19文字 x 2行)" rows=2></textarea>
+    <form class="h-adr">
+        <span class="p-country-name">Japan</span>
+        <input type="text" name="to_zip" id="to_zip" placeholder="郵便番号" title="半角数字7桁" class="p-postal-code">
+        <textarea name="to_add" id="to_add" placeholder="住所 (14文字 x 4行)" rows=4 title="郵便番号から自動入力" class="p-region p-locality p-street-address p-extended-address"></textarea>
+        <textarea name="to_name" id="to_name" placeholder="名前 (13文字 x 2行)" rows=2></textarea>
+        <input type="text" name="to_tel1" id="to_tel1" placeholder="TEL1" title="半角数字4桁" class="tel">
+        <input type="text" name="to_tel2" id="to_tel2" placeholder="TEL2" title="半角数字4桁" class="tel">
+        <input type="text" name="to_tel3" id="to_tel3" placeholder="TEL3" title="半角数字4桁" class="tel">
+    </form>
+    <form class="h-adr">
+        <span class="p-country-name">Japan</span>
+        <input type="text" name="from_zip" id="from_zip" placeholder="郵便番号" title="半角数字7桁" class="p-postal-code">
+        <textarea name="from_add" id="from_add" placeholder="住所 (20文字 x 2行)" rows=2 title="郵便番号から自動入力" class="p-region p-locality p-street-address p-extended-address"></textarea>
+        <textarea name="from_name" id="from_name" placeholder="名前 (20文字 x 2行)" rows=2></textarea>
+        <input type="text" name="from_tel1" id="from_tel1" placeholder="TEL1" title="半角数字4桁" class="tel">
+        <input type="text" name="from_tel2" id="from_tel2" placeholder="TEL2" title="半角数字4桁" class="tel">
+        <input type="text" name="from_tel3" id="from_tel3" placeholder="TEL3" title="半角数字4桁" class="tel">
+        <textarea name="desc" id="desc" placeholder="品名 (19文字 x 2行)" rows=2></textarea>
+    </form>
 
 
     <div id="foot1">
