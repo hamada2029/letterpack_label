@@ -24,11 +24,19 @@
             }
         };
     </script>
+    <script type="text/javascript">
+        var locUpdated;
+        function setUpdated (j) {
+            locUpdated = j.updated;
+        }
+    </script>
+    <script type="text/javascript" src="updated.js"></script>
     <link rel="stylesheet" type="text/css" href="css/styles2.css">
     <script src="https://yubinbango.github.io/yubinbango/yubinbango.js" charset="UTF-8"></script>
     <script type="text/javascript" src="scripts/file_dl.js"></script>
     <script type="text/javascript" src="scripts/file_load.js"></script>
     <script type="text/javascript" src="scripts/form_script.js"></script>
+    <script type="text/javascript" src="scripts/pdf_script2.js"></script>
     <title>続・レターパックプラスラヴェルメイカー</title>
 </head>
 <body>
@@ -97,7 +105,7 @@
             open('https://hamada2029.github.io/letterpack_label/donation.html');
         };
         document.getElementById('make_btn').onclick = function () {
-            alert();
+            makePDF();
         };
         document.getElementById('save_btn').onclick = fileDL;
         var load_file = document.getElementById('load_file');
