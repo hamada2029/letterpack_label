@@ -55,6 +55,7 @@ function makeAO () {
     ao.desc2 = ao.desc[1];
     // 1行のときちょっと上げる
     ao.df = ao.desc[0] === '' ? 3 : 0;
+    ao.isLight = location.search == '?light';
     console.log(ao);
     return ao;
 }
@@ -67,18 +68,14 @@ function defineDoc() {
 
 
 function maskButtonsEnable() {
-    var nlist = document.querySelectorAll('#mask button');
-    var nd = Array.prototype.slice.call(nlist, 0);
-    nd.forEach(        
+    q2n('#mask button').forEach(        
         function(e, i){
             e.style.visibility = 'visible';
         }
     ); 
 }
 function maskButtonsDisable() {
-    var nlist = document.querySelectorAll('#mask button');
-    var nd = Array.prototype.slice.call(nlist, 0);
-    nd.forEach(        
+    q2n('#mask button').forEach(        
         function(e, i){
             e.style.visibility = 'hidden';
         }
@@ -89,7 +86,9 @@ function maskButtonsDisable() {
 
 function makePDF() {
     toStorage();
-    document.getElementById('mask').style.visibility = 'visible';
+    var mask = document.getElementById('mask');
+    mask.style.visibility = 'visible';
+    mask.style['z-index'] = 100;
     maskButtonsDisable();
     sp.spin(document.getElementById('spin'));
 
@@ -99,6 +98,9 @@ function makePDF() {
     }
     var baseURL = window.location.href.replace(/\\/g, '/').replace(/\/[^\/]*$/, '/');
     var q = '?' + locUpdated;  // キャッシュ対策
+    if (baseURL.indexOf('file://') == 0) {
+        q = '?' + Math.random();  // debug and local
+    }
     // ローカル環境のセキュリティエラー回避
     // http://d.hatena.ne.jp/tshino/20180106/1515218776
     var newWorkerViaBlob = function(relativePath) {

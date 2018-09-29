@@ -1,6 +1,6 @@
 
-function getImagedata () {
-    if (location.search == '?light') {
+function getImagedata (isLight) {
+    if (isLight) {
         return imagedata_light;
     }
     return imagedata_plus;
@@ -24,7 +24,7 @@ function _defineDoc (ao) {
             },
             content: [
                 {
-                    image: getImagedata(),
+                    image: getImagedata(ao.isLight),
                     absolutePosition: {x:0, y:0},
                     width: 594.35
                 }

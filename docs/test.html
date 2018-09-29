@@ -50,7 +50,7 @@
         <div id="overview">
             フォーム入力だけで作成出来ます。<br>
             文字数オーバーすると赤くなります。(そのままでもPDF出力は可能です。)<br>
-            <a href="form.html?light">ライトはこちら</a>です。<br>
+            <a href="test.html?light">ライトはこちら</a>です。<br>
             PC上で無制限に使いたい方は<a href="https://paymo.life/shops/923e69bf8d/pg4GA2T8UX" target="_blank" title="1000円">有料版</a>をご検討ください。
         </div>
     </div>
@@ -127,9 +127,31 @@
         document.getElementById('clear_all_btn').onclick = clearAll;
         document.getElementById('clear_to_btn').onclick = clearTo;
 
+        document.getElementById('dl_btn').onclick = function(){
+            var j = getVs();
+            var link = document.getElementById('dl_link');
+            link.download = j.file_name.replace('.json', '.pdf');
+            link.href = frame1.location.href;
+            link.click();
+            link.href = '';
+        };
+        document.getElementById('print_btn').onclick = function(){
+            frame1.print();
+        };
+        document.getElementById('close_btn').onclick = function(){
+            q2n('#mask, #mask button').forEach(
+                function (e, i) {
+                    e.style.visibility = 'hidden';
+                }
+            );
+            // safariでうまく隠れないので
+            document.getElementById('mask').style['z-index'] = 0;
+        };
 
+        fromStorage();
     </script>
 </body>
+<script type="text/javascript" src="scripts/plus_or_light2.js"></script>
 
 </html>
 

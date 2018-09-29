@@ -31,7 +31,7 @@ body{
     height: 9%;
     width: 100%;
     background-color: var(--plus-color1);
-    background-image: url('../imgs/logo.svg');
+    background-image: url('../imgs/logo_plus.svg');
     background-size: 110%;
     background-repeat: no-repeat;
     background-position: center bottom;

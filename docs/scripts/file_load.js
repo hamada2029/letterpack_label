@@ -16,7 +16,7 @@ function setData(ev) {
         if(e === null){continue;}
         e.value = j[k];
     }
-    $('#load_file').val(null);
+    document.getElementById('load_file').value = null;
 }
 
 

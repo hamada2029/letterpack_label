@@ -13,15 +13,15 @@ if (location.search == '?light') {
 
     document.querySelector('#head1').style['background-color'] = lightColor1;
     document.querySelector('#head1').style.border = 'medium solid ' + lightColor1;
-    document.querySelectorAll('.h_button').forEach(
+    q2n('.h_button').forEach(
         function(e, i) {
             e.style.background = lightColor2;
         }
     );
-    document.querySelectorAll('.f_button').forEach(
+    q2n('.f_button').forEach(
         function(e, i) {e.style.background = lightColor1;}
     );
-    document.querySelectorAll('#mask button').forEach(
+    q2n('#mask button').forEach(
         function(e, i) {e.style.background = lightColor1;}
     );
     var donate = document.querySelector('#donate');

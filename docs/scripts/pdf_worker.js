@@ -13,10 +13,11 @@ onmessage = function (ev) {
         if(dt.c > 0){return;}
         // なぜか相対URL使えなかった
         // 更新しそうにないスクリプト
-        importScripts(dt.baseURL + 'scripts/mplus-2m-regular.js');
         importScripts(dt.baseURL + 'scripts/imagedata_plus.js');
         importScripts(dt.baseURL + 'scripts/imagedata_light.js');
         importScripts(dt.baseURL + 'scripts/pdfmake.min.js');
+        // pdfmakeの後
+        importScripts(dt.baseURL + 'scripts/mplus-2m-regular.js');
         // こっちもキャッシュ対策
         importScripts(dt.baseURL + 'scripts/position.js' + dt.q);
         importScripts(dt.baseURL + 'scripts/defineDocCore.js' + dt.q);
