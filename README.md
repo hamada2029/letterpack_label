@@ -22,9 +22,8 @@ on your browser and input form.
 
 This software uses code from several libraries.
 
-- [jQuery](https://jquery.com/)
 - [pdfmake](http://pdfmake.org/)
-- [ajaxzip3](https://github.com/ajaxzip3)
+- [YubinBango](https://yubinbango.github.io/)
 - [M+ FONTS](http://mplus-fonts.osdn.jp/)
 - [spin.js](https://spin.js.org/)
 - [clipboard.js](https://clipboardjs.com/)
