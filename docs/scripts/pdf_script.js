@@ -55,6 +55,7 @@ function makeAO () {
     ao.desc2 = ao.desc[1];
     // 1行のときちょっと上げる
     ao.df = ao.desc[0] === '' ? 3 : 0;
+    ao.isLight = location.search == '?light';
     console.log(ao);
     return ao;
 }
@@ -67,18 +68,14 @@ function defineDoc() {
 
 
 function maskButtonsEnable() {
-    var nlist = document.querySelectorAll('#mask button');
-    var nd = Array.prototype.slice.call(nlist, 0);
-    nd.forEach(        
+    q2n('#mask button').forEach(        
         function(e, i){
             e.style.visibility = 'visible';
         }
     ); 
 }
 function maskButtonsDisable() {
-    var nlist = document.querySelectorAll('#mask button');
-    var nd = Array.prototype.slice.call(nlist, 0);
-    nd.forEach(        
+    q2n('#mask button').forEach(        
         function(e, i){
             e.style.visibility = 'hidden';
         }
@@ -89,31 +86,63 @@ function maskButtonsDisable() {
 
 function makePDF() {
     toStorage();
-    document.getElementById('mask').style.visibility = 'visible';
+    var mask = document.getElementById('mask');
+    mask.style.visibility = 'visible';
+    mask.style['z-index'] = 100;
     maskButtonsDisable();
     sp.spin(document.getElementById('spin'));
 
-    function blobCallback(result){
+    if(! window.Worker){  // （1）ワーカーの実装チェック
+        alert('このブラウザでは利用できません。');
+        throw(window.Worker);
+    }
+    var baseURL = window.location.href.replace(/\\/g, '/').replace(/\/[^\/]*$/, '/');
+    var q = '?' + locUpdated;  // キャッシュ対策
+    if (baseURL.indexOf('file://') == 0) {
+        q = '?' + Math.random();  // debug and local
+    }
+    // ローカル環境のセキュリティエラー回避
+    // http://d.hatena.ne.jp/tshino/20180106/1515218776
+    var newWorkerViaBlob = function(relativePath) {
+        var array = [
+            'importScripts("' + baseURL + relativePath + q + '");'
+        ];
+        var blob = new Blob(array, {type: 'text/javascript'});
+        var url = window.URL.createObjectURL(blob);
+        return new Worker(url);
+    };
+    var newWorker = function(relativePath) {
+        try {
+            return newWorkerViaBlob(relativePath);
+        } catch (e) {
+            console.log(e);
+            return new Worker(relativePath);
+        }
+    };
+
+    var worker = new newWorker('scripts/pdf_worker.js');
+    var c = 0;  // 重複実行を避ける
+    // 入力値を送る
+    worker.postMessage(
+        {ao: makeAO(), baseURL: baseURL, q: q, c:c}
+    );
+    c++;
+
+    // メッセージ取得時の処理
+    worker.onmessage = function (ev) {
+        if(! ev.data){
+            sp.stop();
+            alert('Error: ' + ev.data);
+            throw('error: ' + ev.data);
+        }
+
         var urlCreator = window.URL || window.webkitURL;
-        var pdfUrl = urlCreator.createObjectURL(result);
+        var pdfUrl = urlCreator.createObjectURL(ev.data);
         frame1.location.href = pdfUrl;
         maskButtonsEnable();
         sp.stop();
-    }
-
-    function generate(){
-        try {
-            var dd = defineDoc();
-            var pdfDocGenerator = pdfMake.createPdf(dd);
-            pdfDocGenerator.getBlob(blobCallback);
-        } catch (e) {
-            sp.stop();
-            alert(e);
-            throw e;
-        }
-    }
-
-    setTimeout(generate, 0);
+        c = 0;
+    };
     return false;
 }
 

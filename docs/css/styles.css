@@ -1,13 +1,28 @@
 
+:root{
+    --plus-color1: #ff5555;
+    --plus-color2: #ee0000;
+}
+
+body{
+    position: absolute;
+    width: 100%;
+    height: 139.5vw;
+    background-color: whitesmoke;
+}
 
 #base_div{
     position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: whitesmoke;
     visibility: hidden;
 }
-
 #base_img{
+    position: absolute;
+    top: 0%;
+    left: 0%;
     width: 100%;
-    border: medium solid whitesmoke;
 }
 
 #head1{
@@ -15,23 +30,26 @@
     top: 0%;
     height: 9%;
     width: 100%;
-    background-color: #ff5555;
-    border: medium solid #ff5555;
+    background-color: var(--plus-color1);
+    background-image: url('../imgs/logo_plus.svg');
+    background-size: 110%;
+    background-repeat: no-repeat;
+    background-position: center bottom;
 }
-
-h1{
+#head_title{
     position: absolute;
-    top: 1%;
+    top: 10%;
     left: 0;
     right: 0;
-    color: white;
     text-align: center;
     margin: auto;
+    color: white;
     font-size: 2vw;
+    font-weight: bold;
 }
 #overview{
     position: absolute;
-    top: 3.5%;
+    top: 35%;
     left: 0;
     right: 0;
     color: white;
@@ -39,43 +57,52 @@ h1{
     margin: auto;
     font-size: 1.2vw;
 }
-.h_button{
+#overview a{
+    color: white;
+}
+
+.h_btn{
     position: absolute;
-    top: 7%;
-    width: 8%;
+    top: 9%;
+    width: 20%;
     height: 1.7%;
-    margin: auto;
-    background: #ee0000;
-    text-align:center;
-    color: #FFFFFF;
-    font-size: 1.2vw;
-    font-weight: bold;
-    border-radius: 0.5vw;
     border: 0;
+    color: white;
+    font-size: 1.2vw;
+    font-weight: bold; 
 }
 button:active{
     opacity: 0.3;
 }
-
-
-#clear_to_button{
-    right: 16%;
-    width: 8%;
+#reverse_btn{
+    left: 0%;
+    background: var(--plus-color2);
 }
-#clear_all_button{
-    right: 7%;
-    width: 8%;
+#clear_to_btn{
+    left: 20%;
+    background: var(--plus-color1);
 }
-#reverse_button{
-    left: 7%;
-    width: 17%;
+#clear_all_btn{
+    left: 40%;
+    background: var(--plus-color2);
+}
+#blogger{
+    left: 60%;
+    background: var(--plus-color1);
+}
+#donation{
+    left: 80%;
+    background: var(--plus-color2);
 }
 
-
+span.p-country-name{
+    display: none;
+}
 input, textarea{
     position: absolute;
     background-color: whitesmoke;
     resize: none;
+    border:none;
 }
 .tel{
     width: 10%;
@@ -83,133 +110,108 @@ input, textarea{
 }
 
 #to_zip{
-    left: 49%;
+    left: 48.9%;
     top: 14.9%;
     width: 38%;
     font-size: 4vw;
 }
 #to_add{
     left: 40%;
-    top: 27%;
+    top: 28%;
     width: 45%;
     font-size: 2vw;
 }
 #to_name{
     left: 40%;
-    top: 39%;
+    top: 39.5%;
     width: 40%;
     font-size: 2vw;
 }
 #to_tel1{
     left: 45%;
-    top: 45.2%;
+    top: 45.6%;
 }
 #to_tel2{
     left: 58.5%;
-    top: 45.2%;
+    top: 45.6%;
 }
 #to_tel3{
     left: 72%;
-    top: 45.2%;
+    top: 45.6%;
 }
 
 
 #from_zip{
-    left: 37.5%;
-    top: 49.3%;
+    left: 37.4%;
+    top: 49.6%;
     width: 16.8%;
     font-size: 1.5vw;
 }
 #from_add{
     left: 40%;
-    top: 54%;
+    top: 54.5%;
     width: 45%;
     font-size: 1.3vw;
 }
 #from_name{
     left: 40%;
-    top: 58.7%;
+    top: 59.2%;
     width: 45%;
     font-size: 1.5vw;
 }
 #from_tel1{
     left: 45%;
-    top: 63.3%;
+    top: 63.85%;
 }
 #from_tel2{
     left: 58.5%;
-    top: 63.3%;
+    top: 63.85%;
 }
 #from_tel3{
     left: 72%;
-    top: 63.3%;
+    top: 63.85%;
 }
 #desc{
     left: 40%;
-    top: 71%;
+    top: 71.5%;
     width: 45%;
     font-size: 1.3vw;
 }
 
 
-.f_button{
+#foot1{
+    position: fixed;
+    bottom: 0%;
+    height: 7%;
+    width: 100%;
+    background-color: white;
+}
+.f_btn{
     position: absolute;
-    background: #ff5555;
-    color: #FFFFFF;
+    top: 0%;
+    width: calc(100% / 3);
+    height: 100%;
+    border: 0;
+    color: white;
     font-weight: bold;
-    box-shadow: 0.5vw 0.5vw 0.5vw #555555;
 }
-
-#make_button{
-    top: 80%;
-    width: 25%;
-    height: 5%;
-    left: 0;
-    right: 0;
-    margin: auto;
-    font-size: 3vw;
-    border-radius: 1.5vw;
+#save_btn{
+    left: 0%;
+    background: var(--plus-color1);
+    font-size: 1.8vw;
 }
-#save_button{
-    top: 81.2%;
-    width: 15%;
-    height: 2.5%;
-    left: 20%;
-    font-size: 1.5vw;
-    border-radius: 1vw;
+#make_btn{
+    left: calc(100% / 3);
+    background: var(--plus-color2);
+    font-size: 2.2vw;
 }
-#load_button{
-    top: 81.2%;
-    width: 15%;
-    height: 2.5%;
-    right: 20%;
-    font-size: 1.5vw;
-    border-radius: 1vw;
+#load_btn{
+    right: 0%;
+    background: var(--plus-color1);
+    font-size: 1.8vw;
 }
 #load_file{
     display: none;
-}
-
-
-#badges{
-    position: absolute;
-    top: 88.2%;
-    left: 0;
-    right: 0;
-    margin: auto;
-    text-align: center;
-    width: 40.5%;
-    height: 10%;
-}
-#donate{
-    position: absolute;
-    height: 20%;
-    left: 0%;
-}
-#blogger{
-    position: absolute;
-    height: 20%;
-    right: 0%;
 }
 
 #mask{
@@ -251,16 +253,14 @@ input, textarea{
     border: 0;
 }
 
-#print_button{
+#print_btn{
     right: 37.1%;
 }
-#dl_button{
+#dl_btn{
     right: 28.1%;
 }
-#close_button{
+#close_btn{
     right: 19.1%;
 }
-
-
 
 
