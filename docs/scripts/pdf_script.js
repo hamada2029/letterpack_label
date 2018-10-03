@@ -120,7 +120,7 @@ function makePDF() {
         }
     };
 
-    var worker = new newWorker('scripts/pdf_worker.js');
+    var worker = newWorker('scripts/pdf_worker.js');
     var c = 0;  // 重複実行を避ける
     // 入力値を送る
     worker.postMessage(
