@@ -4,7 +4,8 @@ onmessage = function (ev) {
 
     function blobCallback(rBlob){
         // UIスレッド側にメッセージを送付する
-       postMessage(rBlob);
+        const msg = {err: false, result: rBlob};
+        postMessage(msg);
     }
 
 
@@ -29,7 +30,8 @@ onmessage = function (ev) {
 
     } catch(e) {
         console.log(e);
-        postMessage(false);
+        const msg = {err: true, result: e};
+        postMessage(msg);
     }
 
 

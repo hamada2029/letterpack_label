@@ -98,7 +98,7 @@ function makePDF() {
     }
     var baseURL = window.location.href.replace(/\\/g, '/').replace(/\/[^\/]*$/, '/');
     var q = '?' + locUpdated;  // キャッシュ対策
-    if (baseURL.indexOf('file://') == 0) {
+    if (baseURL.indexOf('file://') === 0) {
         q = '?' + Math.random();  // debug and local
     }
     // ローカル環境のセキュリティエラー回避
@@ -130,14 +130,14 @@ function makePDF() {
 
     // メッセージ取得時の処理
     worker.onmessage = function (ev) {
-        if(! ev.data){
+        if(ev.data.err){
             sp.stop();
-            alert('Error: ' + ev.data);
-            throw('error: ' + ev.data);
+            alert('Error: ' + ev.data.result);
+            throw('error: ' + ev.data.result);
         }
 
         var urlCreator = window.URL || window.webkitURL;
-        var pdfUrl = urlCreator.createObjectURL(ev.data);
+        var pdfUrl = urlCreator.createObjectURL(ev.data.result);
         frame1.location.href = pdfUrl;
         maskButtonsEnable();
         sp.stop();
